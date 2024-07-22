@@ -1,0 +1,215 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f6f8fa;
+    color: #24292e;
+}
+
+header {
+    background: #24292e;
+    color: #fff;
+    padding: 1em 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #f0e68c;
+}
+
+.container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2em 0;
+}
+
+section {
+    padding: 2em;
+    margin: 2em 0;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+footer {
+    background: #24292e;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+}
+
+#bible-animation {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 100px;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.book {
+    width: 200px;
+    height: 100px;
+    position: relative;
+}
+
+.page {
+    width: 100px;
+    height: 100px;
+    background: #fff;
+    position: absolute;
+    transform-origin: right center;
+    backface-visibility: hidden;
+}
+
+.page.left {
+    left: 0;
+    background: #ddd;
+}
+
+.page.right {
+    right: 0;
+    background: #bbb;
+    transform: rotateY(180deg);
+}
+
+.hidden {
+    display: none;
+}
+
+.book.open .page.left {
+    animation: openBookLeft 2s forwards;
+}
+
+.book.open .page.right {
+    animation: openBookRight 2s forwards;
+}
+/* ... existing styles ... */
+
+article {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 1em;
+    margin: 1em 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+article h3 {
+    color: #0366d6;
+    font-size: 1.5em;
+    margin-top: 0;
+}
+
+article p {
+    color: #24292e;
+    line-height: 1.6;
+    margin: 0.5em 0;
+}
+
+/* Daily Verse Styling */
+#verses {
+    background: #e0f7fa;
+    padding: 2em;
+    border-radius: 10px;
+}
+
+#daily-verse {
+    font-size: 1.2em;
+    color: #00796b;
+    font-weight: bold;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    nav ul {
+        display: block;
+        text-align: center;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .container {
+        width: 90%;
+    }
+}
+
+
+@keyframes openBookLeft {
+    0% {
+        transform: rotateY(0);
+    }
+    100% {
+        transform: rotateY(-180deg);
+    }
+}
+
+@keyframes openBookRight {
+    0% {
+        transform: rotateY(180deg);
+    }
+    100% {
+        transform: rotateY(0);
+    }
+}
+
+/* Animations for sections */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+section {
+    animation: fadeInUp 1s ease-in-out;
+}
+
+/* Daily Verse Styling */
+#verses {
+    background: #e0f7fa;
+    padding: 2em;
+    border-radius: 10px;
+}
+
+#daily-verse {
+    font-size: 1.2em;
+    color: #00796b;
+    font-weight: bold;
+}
